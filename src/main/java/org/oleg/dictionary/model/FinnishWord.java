@@ -54,7 +54,7 @@ public class FinnishWord {
     private Integer popularity;
 
     @Column
-    private Integer degradeNew;
+    private Integer repeatAgain;
 
     @Column(columnDefinition = "TEXT")
     private String comment;
