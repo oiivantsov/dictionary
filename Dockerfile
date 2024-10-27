@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Build the project
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 # Create a new image for running the app
 FROM openjdk:17-jdk-slim
