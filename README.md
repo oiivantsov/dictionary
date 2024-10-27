@@ -51,6 +51,45 @@ https://dictionary-a919.onrender.com/api/words
 - **Docker**: Containerizes the application for easier deployment.
 - **Render**: Hosts the application in the cloud.
 
+
+## Database Setup
+
+### Using the Test Database
+The project is preconfigured to use a **test PostgreSQL database** that includes a set of preloaded Finnish words. This setup is ideal for testing the API without needing to configure a custom database. The test database allows users to explore the API's capabilities, such as searching, filtering, and managing words.
+
+### Using Your Own Database
+If you want to use your **own database** instead of the provided test database, follow these steps:
+
+1. **Set Up a PostgreSQL Database**:
+- Create a new PostgreSQL database using your preferred method (e.g., through a cloud provider like AWS RDS or locally on your machine).
+- Make sure to note the database credentials, including:
+  - Database name
+  - Username
+  - Password
+  - Host (URL or IP address)
+  - Port (typically `5432`)
+
+2. **Update Environment Variables**:
+- Edit the environment variables in the `application.properties` or set them in your deployment environment (e.g., Render, Docker, etc.). The variables to configure are:
+  ```properties
+  spring.datasource.url=jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+  spring.datasource.username=${DB_USER}
+  spring.datasource.password=${DB_PASSWORD}
+  ```
+- Replace `${DB_HOST}`, `${DB_PORT}`, `${DB_NAME}`, `${DB_USER}`, and `${DB_PASSWORD}` with the values for your database.
+
+3. **Database Schema**:
+- The application will automatically create the required tables using **Spring Data JPA** when it starts, as long as `spring.jpa.hibernate.ddl-auto=update` is set in the `application.properties`. This will ensure that the `finnish_dictionary` table is created if it does not already exist.
+- Alternatively, you can manually create the schema using a SQL script if you prefer a more controlled setup.
+
+4. **Populate the Database**:
+- If you wish to start with your own set of words, you can manually add entries into the `finnish_dictionary` table using an SQL client or import data from a CSV or Excel file.
+
+5. **Restart the Application**:
+- After updating the configuration, restart the application to connect to the new database. The API will now use your custom PostgreSQL database for all its operations.
+
+By following these steps, you can easily transition from the provided test database to a custom setup that better fits your needs. This flexibility allows you to adapt the application to your specific use case or integrate it into an existing environment.
+
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or features.
 
