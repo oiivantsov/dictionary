@@ -1,5 +1,5 @@
 # Use Maven to build the JAR
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven AS build
 
 # Set the working directory inside the container
 WORKDIR /app
