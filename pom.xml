@@ -12,7 +12,7 @@
 	<artifactId>dictionary</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dictionary</name>
-	<description>Finnish Dictionary in Spring Boot</description>
+	<description>Finnish Dictionary RESTful API in Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -55,13 +55,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.github.cdimascio/java-dotenv -->
-		<dependency>
-			<groupId>io.github.cdimascio</groupId>
-			<artifactId>java-dotenv</artifactId>
-			<version>5.2.2</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
