@@ -23,7 +23,10 @@ Welcome to the Finnish Dictionary RESTful API, a Spring Boot-based service that 
 ## API Endpoints
 
 ### Base URL
+The API is hosted on Render and can be accessed at the following base URL:
 https://dictionary-a919.onrender.com/api/words
+
+Please note that **the first loading may take about 30-50 seconds** due to the **free-tier hosting on Render**. This delay occurs because the server might need to wake up from an idle state. Subsequent requests should be faster.
 
 
 ### Word Management
@@ -55,7 +58,7 @@ https://dictionary-a919.onrender.com/api/words
 ## Database Setup
 
 ### Using the Test Database
-The project is preconfigured to use a **test PostgreSQL database** that includes a set of preloaded Finnish words. This setup is ideal for testing the API without needing to configure a custom database. The test database allows users to explore the API's capabilities, such as searching, filtering, and managing words.
+The project is preconfigured to use a **test PostgreSQL database** that includes a rich dataset of **over 13,000 Finnish words**. These entries have been meticulously collected over **two years** during my journey of learning Finnish. This setup is ideal for testing the API and exploring the different capabilities of the application without needing to configure a custom database.
 
 ### Using Your Own Database
 If you want to use your **own database** instead of the provided test database, follow these steps:
