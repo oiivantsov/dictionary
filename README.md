@@ -18,7 +18,7 @@ The project started as a simple **Excel spreadsheet** where I manually recorded 
 This project is now a part of my personal dictionary ecosystem, which includes:
 - **This RESTful API** built with **Spring Boot**, providing structured access to the word data and enabling various query operations.
 - A **React-based frontend** that allows for a user-friendly interface to search, filter, and manage words.
-- A **Python parser** that automatically extracts and updates word data from **open Finnish dictionary sources**, making it easier to keep the vocabulary up-to-date.
+- A **Python parser** that automatically extracts and updates word data from **open Finnish dictionary sources**, making it easier to add new words.
 
 ### Note
 The React app and the Python parser are not yet publicly available, but links will be provided here in future updates.
