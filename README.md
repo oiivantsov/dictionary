@@ -9,7 +9,7 @@ Welcome to the Finnish Dictionary RESTful API, a Spring Boot-based service that 
 - **Database**: PostgreSQL
 - **Build Tool**: Maven
 - **Java Version**: 17
-- **API Deployment**: Hosted on Render ([Example GET-request](https://dictionary-a919.onrender.com/api/words/1))
+- **API Deployment**: Hosted on Render ([example of GET-request](https://dictionary-a919.onrender.com/api/words/1))
 
 ## Project History
 
