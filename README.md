@@ -9,7 +9,7 @@ Welcome to the Finnish Dictionary RESTful API, a Spring Boot-based service that 
 - **Database**: PostgreSQL
 - **Build Tool**: Maven
 - **Java Version**: 17
-- **API Deployment**: Hosted on [Render](https://dictionary-a919.onrender.com/api/words)
+- **API Deployment**: Hosted on Render ([example of GET-request](https://dictionary-a919.onrender.com/api/words/1))
 
 ## Project History
 
@@ -38,8 +38,7 @@ By transforming the original Excel-based dictionary into a structured API and we
 ## API Endpoints
 
 ### Base URL
-The API is hosted on Render and can be accessed at the following base URL:
-https://dictionary-a919.onrender.com/api/words
+The API is hosted on Render, example GET-request: https://dictionary-a919.onrender.com/api/words/1
 
 Please note that **the first loading may take about 30-50 seconds** due to the **free-tier hosting on Render**. This delay occurs because the server might need to wake up from an idle state. Subsequent requests should be faster.
 
