@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * REST controller for managing Finnish words in the dictionary.
@@ -120,18 +121,23 @@ public class FinnishWordController {
      * @param words the list of words to upgrade
      * @return a response with the updated words
      */
-    @PostMapping("/upgrade")
-    public ResponseEntity<?> upgradeWords(@RequestBody List<FinnishWord> words) {
-        List<FinnishWord> updatedWords = new ArrayList<>();
 
-        for (FinnishWord word : words) {
-            word.setLevel(word.getLevel() + 1);
-            word.setDateRepeated(LocalDate.now());
-            updatedWords.add(service.saveWord(word));
-        }
+    @PostMapping("/upgrade")
+    public ResponseEntity<?> upgradeWords(
+            @RequestBody List<FinnishWord> words,
+            @RequestParam(required = false) String date) {
+
+        LocalDate newDate = date != null ? LocalDate.parse(date) : LocalDate.now();
+
+        List<FinnishWord> updatedWords = words.stream().map(word -> {
+            word.setLevel(word.getLevel() + 1); // Automatic level increment
+            word.setDateRepeated(newDate);
+            return service.saveWord(word);
+        }).collect(Collectors.toList());
 
         return ResponseEntity.ok(updatedWords);
     }
+
 
     /**
      * Endpoint to update an existing word in the dictionary.
